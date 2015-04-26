@@ -76,9 +76,9 @@ ssize_t rio_writelineb(rio_t *p, void *usrbuf, size_t n);
 
 ssize_t rio_readnb(rio_t *rp, void *usrbuf, size_t n);
 
-ssize_t rio_writenb(rio_t *p, void *usrbuf, size_t n);
-
 static ssize_t rio_read(rio_t *rp, char *usrbuf, size_t n);
+
+static ssize_t rio_write(rio_t *rp, char *usrbuf, size_t n);
 
 void rio_readinitb(rio_t *rp, int fd) {
     rp->rio_fd = fd;
@@ -153,4 +153,7 @@ ssize_t rio_readnb(rio_t *rp, void *usrbuf, size_t n) {
     return n - nleft;
 }
 
+
+
 #endif //TEST_PROJECT_RIO_H
+
